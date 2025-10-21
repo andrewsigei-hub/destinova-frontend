@@ -1,9 +1,11 @@
+
 import React from 'react'
-import Navbar from './Components/Navbar'
-export default function App() {
+import Destinations from './Components/Destinations'
+
+function App() {
   return (
     <div>
-      < Navbar />
+      <Destinations />
     </div>
   )
 }
