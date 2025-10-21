@@ -35,9 +35,8 @@ function Destinations() {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
           />
-          <button type="search"> Search</button>
 
-      <div className="destination-grid" style={{display: "grid",  gridTemplateColumns: "repeat(3, 1fr)",gap:"1.5rem", padding: "2rems", justifyItems: "center"}}>
+      <div className="destination-grid" style={{display: "grid",  gridTemplateColumns: "repeat(3, 1fr)",gap:"1.5rem", padding: "2rems", justifyItems: "center", margin: "15px"}}>
         {filteredDestinations.length > 0 ? (
           filteredDestinations.map((dest) => (
             <DestinationCard key={dest.id} {...dest} />
