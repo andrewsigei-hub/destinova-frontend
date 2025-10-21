@@ -1,0 +1,58 @@
+{
+  "destinations": [
+    {
+      "id": 1,
+      "name": "Paris",
+      "image": "https://images.unsplash.com/photo-1553455427-c38fa28dc586?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470",
+      "location": "France"
+    },
+    {
+      "id": 2,
+      "name": "Bali",
+      "image": "https://images.unsplash.com/photo-1708397855939-6668d1ddd77d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735",
+      "location": "Indonesia"
+    },
+    {
+      "id": 3,
+      "name": "New York City",
+      "image": "https://images.unsplash.com/photo-1548143580-db1bff6af184?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
+      "location": "USA"
+    },
+    {
+      "id": 4,
+      "name": "Tokyo",
+      "image": "https://images.unsplash.com/photo-1549693578-d683be217e58?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1477",
+      "location": "Japan"
+    },
+    {
+      "id": 5,
+      "name": "Quebec",
+      "image": "https://images.unsplash.com/photo-1711505200880-b234abe7c524?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470",
+      "location": "Canada"
+    },
+    {
+      "id": 6,
+      "name": "Sydney",
+      "image": "https://images.unsplash.com/photo-1724925790382-3fd490bfab25?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735",
+      "location": "Austraia"
+    },
+    {
+      "id": 7,
+      "name": "Rome",
+      "image": "https://images.unsplash.com/photo-1529260830199-42c24126f198?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1476",
+      "location": "Italy"
+    },
+    {
+      "id": 8,
+      "name": "Maui",
+      "image": "https://images.unsplash.com/photo-1542259009477-d625272157b7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1469",
+      "location": "Hawaii, USA"
+    },
+    {
+      "id": 9,
+      "name": "Santorini",
+      "image": "hhttps://plus.unsplash.com/premium_photo-1661963145672-a2bd28eba0fb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470",
+      "location": "Greece"
+    }
+  ]
+}
