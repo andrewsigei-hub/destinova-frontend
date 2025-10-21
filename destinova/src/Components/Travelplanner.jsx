@@ -50,7 +50,7 @@ function TravelPlanner() {
 
   return (
     <div className="p-8 max-w-2xl mx-auto text-center">
-      <h1 className="text-3xl font-bold mb-4 text-blue-600">🌍 Travel Planner</h1>
+      <h1 className="text-3xl font-bold mb-4 text-blue-600">Travel Planner</h1>
 
       <form onSubmit={handleAdd} className="flex gap-2 justify-center mb-6">
         <input
@@ -76,7 +76,7 @@ function TravelPlanner() {
               onClick={() => handleDelete(dest.id)}
               className="text-red-500 hover:text-red-700"
             >
-              ❌
+              
             </button>
           </li>
         ))}
