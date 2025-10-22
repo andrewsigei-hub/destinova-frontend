@@ -1,18 +1,19 @@
-import React from "react";
-import Navbar from "./Components/Navbar.jsx";
-import Destinations from "./pages/Destinations.jsx";
-import { Routes, Route } from "react-router-dom";
+import Navbar from './Components/Navbar'
+import React from 'react'
+import Destinations from './Components/Destinations'
+import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
+  const notify = () => toast("Wow so easy!");
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<h1>Welcome to Destinova</h1>} />
-        <Route path="/destinations" element={<Destinations />} />
-      </Routes>
-    </>
-  );
+      <Destinations />
+      <button onClick={notify}>Notify!</button>
+        <ToastContainer />
+    </div>
+    
+  )
 }
 
 export default App;
