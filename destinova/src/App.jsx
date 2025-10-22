@@ -1,19 +1,14 @@
-
-import React from 'react'
-import Destinations from './Components/Destinations'
-import Navbar from './Components/Navbar'
-
+import React from "react";
+import Destinations from "./pages/Destinations";
+import Navbar from "./Components/Navbar";
 
 function App() {
-   
   return (
     <div>
       <Navbar />
       <Destinations />
-      
     </div>
-  )
+  );
 }
 
-export default App
-
+export default App;

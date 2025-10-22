@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 // Import DestinationCard
-import DestinationCard from "./DestinationCard";
+import DestinationCard from "../Components/DestinationCard";
 
 function Destinations() {
-    // Sets the useState to empty array for destinations, true to loading and empty strings to the search input field.
+  // Sets the useState to empty array for destinations, true to loading and empty strings to the search input field.
   const [destinations, setDestinations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
-// UseEffect and data fetching from db.json file
+  // UseEffect and data fetching from db.json file
   useEffect(() => {
     fetch("http://localhost:3000/destinations")
       .then((res) => res.json())
@@ -18,11 +18,11 @@ function Destinations() {
       .catch((error) => console.error("Error fetching destinations:", error));
   }, []);
 
-  // Filter destinations by name 
+  // Filter destinations by name
   const filteredDestinations = destinations.filter((d) =>
     d.name.toLowerCase().includes(search.toLowerCase())
   );
-//  THis message is displayed when the page is loading.
+  //  THis message is displayed when the page is loading.
   if (loading) {
     return <p>Loading Destinations...</p>;
   }
@@ -37,10 +37,10 @@ function Destinations() {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-{/* This section is displayed immediately the page loads and it gets filtered when a user searches a destination  */}
+      {/* This section is displayed immediately the page loads and it gets filtered when a user searches a destination  */}
       <div
-              className="destination-grid"
-            //   added some inline styling to ensure only 3 destinatios are displayed per line.
+        className="destination-grid"
+        //   added some inline styling to ensure only 3 destinatios are displayed per line.
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
@@ -54,8 +54,8 @@ function Destinations() {
           filteredDestinations.map((dest) => (
             <DestinationCard key={dest.id} {...dest} />
           ))
-              ) : (
-                    //   This message pops up when no destination with the search name is found
+        ) : (
+          //   This message pops up when no destination with the search name is found
           <p>No destinations found with that name.</p>
         )}
       </div>
