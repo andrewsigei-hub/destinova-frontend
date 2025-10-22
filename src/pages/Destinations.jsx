@@ -16,6 +16,16 @@ function Destinations() {
       .catch((error) => console.error("Error fetching destinations:", error));
   }, []);
 
+   const handleAddDestination = (newDest) => {
+     setDestinations((prev) => [...prev, newDest]);
+// Posting to backend
+     fetch("http://localhost:3000/destinations", {
+       method: "POST",
+       headers: { "Content-Type": "application/json" },
+       body: JSON.stringify(newDest),
+     });
+   };
+
   const filteredDestinations = destinations.filter((d) =>
     d.name.toLowerCase().includes(search.toLowerCase())
   );
@@ -57,6 +67,9 @@ function Destinations() {
             No destinations found with that name.
           </p>
         )}
+      </div>
+      <div>
+        <AddDestinationForm onAdd={handleAddDestination} />
       </div>
     </div>
   );
