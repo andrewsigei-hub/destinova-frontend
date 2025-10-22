@@ -7,7 +7,12 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Destinations />
+      <section id= "destination">
+        <Destinations />
+      </section>
+      <section id= "home">
+        <Home />
+      </section>
     </div>
   )
 }
