@@ -10,34 +10,22 @@ export default function Navbar() {
 
       <ul className="flex gap-8 text-lg font-medium">
         <li>
-          <Link
-            to="/home"
-            className="hover:text-yellow-200 transition-colors duration-200"
-          >
+          <Link to="/" className="hover:text-yellow-200 transition-colors duration-200">
             Home
           </Link>
         </li>
         <li>
-          <Link
-            to="/destinations"
-            className="hover:text-yellow-200 transition-colors duration-200"
-          >
+          <Link to="/destinations" className="hover:text-yellow-200 transition-colors duration-200">
             Destinations
           </Link>
         </li>
         <li>
-          <Link
-            to="/planner"
-            className="hover:text-yellow-200 transition-colors duration-200"
-          >
+          <Link to="/planner" className="hover:text-yellow-200 transition-colors duration-200">
             Planner
           </Link>
         </li>
         <li>
-          <Link
-            to="/contact"
-            className="hover:text-yellow-200 transition-colors duration-200"
-          >
+          <Link to="/contact" className="hover:text-yellow-200 transition-colors duration-200">
             Contact & Help
           </Link>
         </li>
