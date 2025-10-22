@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const notify = () => toast("Wow so easy!");
+  const notify = () => toast("Added to planner");
   return (
     <div>
       <Navbar />
