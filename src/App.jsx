@@ -1,6 +1,7 @@
 import Navbar from './Components/Navbar'
 import React from 'react'
 import Destinations from './Components/Destinations'
+import Home from './Components/Home'
 
 
 function App() {
