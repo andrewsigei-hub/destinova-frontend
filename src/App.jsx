@@ -3,6 +3,7 @@ import React from 'react'
 import Destinations from './pages/Destinations'
 import { ToastContainer, toast } from 'react-toastify';
 import { Routes, Route } from "react-router-dom";
+import HomePage from './pages/HomePage';
 
 function App() {
   const notify = () => toast("Added to planner");
@@ -10,7 +11,7 @@ function App() {
     <div>
       <Navbar />
       <Routes>
-        <Route path="/" element={<h1>Welcome to Destinova</h1>} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/destinations" element={<Destinations />} />
       </Routes>
       <button onClick={notify}>Notify!</button>
