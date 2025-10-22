@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 // Import DestinationCard
-import DestinationCard from "./DestinationCard";
+import DestinationCard from "../Components/DestinationCard";
 
 function Destinations() {
     // Sets the useState to empty array for destinations, true to loading and empty strings to the search input field.

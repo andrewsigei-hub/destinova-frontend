@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 function App() {
   const notify = () => toast("Wow so easy!");
   return (
-    <div>
+    <>
       <Navbar />
       <Destinations />
       <button onClick={notify}>Notify!</button>
@@ -16,4 +16,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
