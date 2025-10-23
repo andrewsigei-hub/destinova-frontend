@@ -24,7 +24,7 @@ const Contact = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:3001/contacts", {
+      const res = await fetch("http://localhost:3000/contacts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
