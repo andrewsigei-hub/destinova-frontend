@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 
 function AddDestinationForm({ onAdd }) {
+  // Sets data for the form to empty strings.
   const [formData, setFormData] = useState({
     name: "",
     image: "",
@@ -10,7 +11,7 @@ function AddDestinationForm({ onAdd }) {
     rating: "",
     location: "",
   });
-
+// Handles change whe a user inputs data in the form
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -18,10 +19,10 @@ function AddDestinationForm({ onAdd }) {
       [name]: value,
     }));
   };
-
+// Handles submit and prevents default behavior
   const handleSubmit = (e) => {
     e.preventDefault();
-
+// Sets new destination to formData
     const newDestination = {
       ...formData,
       id: Date.now(), // generate a unique id
