@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import DestinationCard from "../Components/DestinationCard";
 import AddDestinationForm from "../Components/AddDestinationForm";
+import { toast } from "react-toastify";
 
 function Destinations() {
   const [destinations, setDestinations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
-  const [showForm, setShowForm] = useState(false)
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:3000/destinations")
@@ -18,16 +19,27 @@ function Destinations() {
       .catch((error) => console.error("Error fetching destinations:", error));
   }, []);
 
-   const handleAddDestination = (newDest) => {
-    //  setDestinations((prev) => [...prev, newDest]);
-// Posting to backend
-     fetch("http://localhost:3000/destinations", {
-       method: "POST",
-       headers: { "Content-Type": "application/json" },
-       body: JSON.stringify(newDest),
-     });
-     setShowForm (false)
-   };
+  const handleAddDestination = (newDest) => {
+    fetch("http://localhost:3000/destinations", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newDest),
+    });
+    setShowForm(false);
+  };
+
+  const handleSaveToPlanner = (destination) => {
+    fetch("http://localhost:3000/planner", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(destination),
+    })
+      .then((res) => {
+        if (res.ok) toast.success(`Saved "${destination.name}" to Planner!`);
+        else toast.error("Failed to save destination.");
+      })
+      .catch(() => toast.error("Network error while saving destination."));
+  };
 
   const filteredDestinations = destinations.filter((d) =>
     d.name.toLowerCase().includes(search.toLowerCase())
@@ -44,7 +56,6 @@ function Destinations() {
         Explore beautiful destinations
       </h3>
 
-      {/* Tailwind dynamic search bar */}
       <div className="flex justify-center mb-8">
         <input
           type="text"
@@ -63,7 +74,15 @@ function Destinations() {
       >
         {filteredDestinations.length > 0 ? (
           filteredDestinations.map((dest) => (
-            <DestinationCard key={dest.id} {...dest}  />
+            <div key={dest.id} className="relative w-full">
+              <DestinationCard {...dest} />
+              <button
+                onClick={() => handleSaveToPlanner(dest)}
+                className="absolute top-2 right-2 bg-green-500 hover:bg-green-600 text-white px-2 py-1 rounded-md text-sm transition"
+              >
+                Save
+              </button>
+            </div>
           ))
         ) : (
           <p className="text-gray-500 text-center">
@@ -71,7 +90,8 @@ function Destinations() {
           </p>
         )}
       </div>
-     <div className="text-center mt-8">
+
+      <div className="text-center mt-8">
         <button
           onClick={() => setShowForm(!showForm)}
           className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition duration-300"
@@ -80,7 +100,6 @@ function Destinations() {
         </button>
       </div>
 
-      {/*  Conditionally render the form */}
       {showForm && <AddDestinationForm onAdd={handleAddDestination} />}
     </div>
   );
