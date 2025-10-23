@@ -1,13 +1,14 @@
-
-import Navbar from './Components/Navbar'
-import React from 'react'
-import Destinations from './pages/Destinations'
-import { ToastContainer, toast } from 'react-toastify';
+import React from "react";
+import Navbar from "./Components/Navbar";
+import Destinations from "./pages/Destinations";
+import Contact from "./pages/Contact";
+import HomePage from "./pages/HomePage";
+import TravelPlanner from "./pages/TravelPlanner"; // Import the new Planner page
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Important: import toast styles
 import { Routes, Route } from "react-router-dom";
-import Contact from './pages/Contact';
-import HomePage from './pages/HomePage';
+
 function App() {
-  const notify = () => toast("Added to planner");
   return (
     <div>
       <Navbar />
@@ -15,9 +16,11 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/destinations" element={<Destinations />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/planner" element={<TravelPlanner />} /> {/* Added route */}
       </Routes>
-      <button onClick={notify}>Notify!</button>
-        <ToastContainer />
+
+      {/* Toast notifications container */}
+      <ToastContainer position="top-center" autoClose={2000} />
     </div>
   );
 }
