@@ -93,8 +93,8 @@
     {
       "id": 11,
       "name": "Venice",
-      "image": "",
-      "description": "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+      "image": "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+      "description": "The city, also known as La Dominante, has suffered from regular floodings since it was founded. Currently, this phenomenon called Acqua Alta still occurs several times a year and is a serious problem for the city.",
       "price": "$7500",
       "rating": "4.6/5",
       "location": "Italy"

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import DestinationCard from "../Components/DestinationCard";
 import AddDestinationForm from "../Components/AddDestinationForm";
 
-function Destinations({onAddToPlanner}) {
+function Destinations() {
   const [destinations, setDestinations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
@@ -63,7 +63,7 @@ function Destinations({onAddToPlanner}) {
       >
         {filteredDestinations.length > 0 ? (
           filteredDestinations.map((dest) => (
-            <DestinationCard key={dest.id} {...dest} onAddToPlanner={() => onAddToPlanner(dest) } />
+            <DestinationCard key={dest.id} {...dest}  />
           ))
         ) : (
           <p className="text-gray-500 text-center">
