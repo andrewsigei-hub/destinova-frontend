@@ -3,30 +3,38 @@ import React from "react";
 
 export default function Navbar() {
   return (
-    <nav className="bg-gradient-to-r from-teal-400 via-cyan-400 to-sky-500 text-white px-8 py-4 flex justify-between items-center shadow-lg">
-      <h1 className="text-2xl font-bold tracking-wide drop-shadow-sm">
-        Destinova
-      </h1>
-
-      <ul className="flex gap-8 text-lg font-medium">
+    <nav className="bg-gradient-to-r from-cyan-500 to-blue-600 shadow-md text-white py-4">
+      <ul className="flex justify-center gap-10 text-lg font-medium">
         <li>
-          <Link to="/" className="hover:text-yellow-200 transition-colors duration-200">
+          <Link
+            to="/"
+            className="hover:text-yellow-300 transition-colors duration-200"
+          >
             Home
           </Link>
         </li>
         <li>
-          <Link to="/destinations" className="hover:text-yellow-200 transition-colors duration-200">
+          <Link
+            to="/destinations"
+            className="hover:text-yellow-300 transition-colors duration-200"
+          >
             Destinations
           </Link>
         </li>
         <li>
-          <Link to="/planner" className="hover:text-yellow-200 transition-colors duration-200">
+          <Link
+            to="/planner"
+            className="hover:text-yellow-300 transition-colors duration-200"
+          >
             Planner
           </Link>
         </li>
         <li>
-          <Link to="/Contact" className="hover:text-yellow-200 transition-colors duration-200">
-            Contact & Help
+          <Link
+            to="/contact"
+            className="hover:text-yellow-300 transition-colors duration-200"
+          >
+            Contact
           </Link>
         </li>
       </ul>
