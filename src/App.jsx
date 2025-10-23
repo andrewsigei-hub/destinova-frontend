@@ -1,3 +1,4 @@
+
 import Navbar from './Components/Navbar'
 import React from 'react'
 import Destinations from './pages/Destinations'
@@ -18,8 +19,7 @@ function App() {
       <button onClick={notify}>Notify!</button>
         <ToastContainer />
     </div>
-    
-  )
+  );
 }
 
 export default App;

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import DestinationCard from "../Components/DestinationCard";
+import AddDestinationForm from "../Components/AddDestinationForm";
 
 function Destinations() {
   const [destinations, setDestinations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
+  const [showForm, setShowForm] = useState(false)
 
   useEffect(() => {
     fetch("http://localhost:3000/destinations")
@@ -15,6 +17,17 @@ function Destinations() {
       })
       .catch((error) => console.error("Error fetching destinations:", error));
   }, []);
+
+   const handleAddDestination = (newDest) => {
+    //  setDestinations((prev) => [...prev, newDest]);
+// Posting to backend
+     fetch("http://localhost:3000/destinations", {
+       method: "POST",
+       headers: { "Content-Type": "application/json" },
+       body: JSON.stringify(newDest),
+     });
+     setShowForm (false)
+   };
 
   const filteredDestinations = destinations.filter((d) =>
     d.name.toLowerCase().includes(search.toLowerCase())
@@ -50,7 +63,7 @@ function Destinations() {
       >
         {filteredDestinations.length > 0 ? (
           filteredDestinations.map((dest) => (
-            <DestinationCard key={dest.id} {...dest} />
+            <DestinationCard key={dest.id} {...dest}  />
           ))
         ) : (
           <p className="text-gray-500 text-center">
@@ -58,6 +71,17 @@ function Destinations() {
           </p>
         )}
       </div>
+     <div className="text-center mt-8">
+        <button
+          onClick={() => setShowForm(!showForm)}
+          className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition duration-300"
+        >
+          {showForm ? "Cancel" : "+ Add Destination"}
+        </button>
+      </div>
+
+      {/*  Conditionally render the form */}
+      {showForm && <AddDestinationForm onAdd={handleAddDestination} />}
     </div>
   );
 }

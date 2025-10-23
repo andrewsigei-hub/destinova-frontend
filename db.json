@@ -94,6 +94,195 @@
       "price": "$8000",
       "rating": "4.5/5",
       "location": "Greece"
+    },
+    {
+      "id": 10,
+      "name": "Kyoto",
+      "image": "https://images.unsplash.com/photo-1558870832-c8db4b5b47d1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=688",
+      "description": "A city in Japan known for its classical Buddhist temples, gardens, imperial palaces, and traditional wooden houses.",
+      "price": "$6200",
+      "rating": "4.7/5",
+      "location": "Japan"
+    },
+    {
+      "id": 11,
+      "name": "Venice",
+      "image": "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+      "description": "The city, also known as La Dominante, has suffered from regular floodings since it was founded. Currently, this phenomenon called Acqua Alta still occurs several times a year and is a serious problem for the city.",
+      "price": "$7500",
+      "rating": "4.6/5",
+      "location": "Italy"
+    },
+    {
+      "id": 12,
+      "name": "Cape Town",
+      "image": "https://images.unsplash.com/photo-1496497243327-9dccd845c35f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+      "description": "A port city on South Africa’s southwest coast, known for its harbor, Table Mountain, and beaches.",
+      "price": "$5400",
+      "rating": "4.4/5",
+      "location": "South Africa"
+    },
+    {
+      "id": 13,
+      "name": "Reykjavik",
+      "image": "https://images.unsplash.com/photo-1671464730980-a69c27c1d871?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+      "description": "Iceland’s capital, known for its colorful buildings, geothermal spas, and Northern Lights.",
+      "price": "$6900",
+      "rating": "4.5/5",
+      "location": "Iceland"
+    },
+    {
+      "id": 14,
+      "name": "Cusco",
+      "image": "https://plus.unsplash.com/premium_photo-1676608102113-d52cc1116f30?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
+      "description": "A city in the Peruvian Andes, gateway to Machu Picchu and Incan history.",
+      "price": "$4800",
+      "rating": "4.3/5",
+      "location": "Peru"
+    },
+    {
+      "id": 15,
+      "name": "Barcelona",
+      "image": "https://images.unsplash.com/photo-1507619579562-f2e10da1ec86?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+      "description": "A vibrant city known for its art, architecture by Gaudí, and Mediterranean beaches.",
+      "price": "$7100",
+      "rating": "4.6/5",
+      "location": "Spain"
+    },
+    {
+      "id": 16,
+      "name": "Petra",
+      "image": "https://images.unsplash.com/photo-1715256962929-9d78afe39e24?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
+      "description": "An ancient city carved into red rock cliffs, known as the Rose City.",
+      "price": "$5300",
+      "rating": "4.8/5",
+      "location": "Jordan"
+    },
+    {
+      "id": 17,
+      "name": "Banff",
+      "image": "https://images.unsplash.com/photo-1582778959124-88d5fd4fafa9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+      "description": "A mountain town in the Canadian Rockies with stunning lakes and alpine views.",
+      "price": "$6700",
+      "rating": "4.7/5",
+      "location": "Canada"
+    },
+    {
+      "id": 18,
+      "name": "Dubai",
+      "image": "https://images.unsplash.com/photo-1518684079-3c830dcef090?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
+      "description": "A futuristic city known for luxury shopping, ultramodern architecture, and desert adventures.",
+      "price": "$8900",
+      "rating": "4.6/5",
+      "location": "United Arab Emirates"
+    },
+    {
+      "id": 19,
+      "name": "Amalfi Coast",
+      "image": "https://images.unsplash.com/photo-1561956021-947f09ae0101?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
+      "description": "A coastal region with cliffside villages, lemon groves, and azure waters.",
+      "price": "$7700",
+      "rating": "4.7/5",
+      "location": "Italy"
+    },
+    {
+      "id": 20,
+      "name": "Seoul",
+      "image": "https://images.unsplash.com/photo-1538485399081-7191377e8241?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=674",
+      "description": "A dynamic city blending tradition with K-pop culture, street food, and cutting-edge tech.",
+      "price": "$6100",
+      "rating": "4.4/5",
+      "location": "South Korea"
+    },
+    {
+      "id": 21,
+      "name": "Prague",
+      "image": "https://images.unsplash.com/photo-1600623471616-8c1966c91ff6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+      "description": "A fairy-tale city known for its medieval architecture and charming Old Town.",
+      "price": "$5600",
+      "rating": "4.5/5",
+      "location": "Czech Republic"
+    },
+    {
+      "id": 22,
+      "name": "Buenos Aires",
+      "image": "https://images.unsplash.com/photo-1610135206707-0f03e4800631?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
+      "description": "Argentina’s capital, known for tango, vibrant neighborhoods, and steak.",
+      "price": "$5900",
+      "rating": "4.3/5",
+      "location": "Argentina"
+    },
+    {
+      "id": 23,
+      "name": "Zanzibar",
+      "image": "https://images.unsplash.com/photo-1621583628955-42fbc37bf424?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735",
+      "description": "A tropical paradise with white sand beaches, turquoise waters, and spice tours.",
+      "price": "$6300",
+      "rating": "4.6/5",
+      "location": "Tanzania"
+    },
+    {
+      "id": 24,
+      "name": "Hallstatt",
+      "image": "https://images.unsplash.com/photo-1572037961907-9c09bef79b40?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735",
+      "description": "A picturesque lakeside village with Alpine houses and salt mines.",
+      "price": "$5800",
+      "rating": "4.8/5",
+      "location": "Austria"
+    },
+    {
+      "id": 25,
+      "name": "Istanbul",
+      "image": "https://images.unsplash.com/photo-1621164870333-7931835f05de?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
+      "description": "A city where East meets West, rich in history and culture.",
+      "price": "$6400",
+      "rating": "4.5/5",
+      "location": "Turkey"
+    },
+    {
+      "id": 26,
+      "name": "Hạ Long Bay",
+      "image": "https://images.unsplash.com/photo-1643029891412-92f9a81a8c16?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1186",
+      "description": "Known for its emerald waters and thousands of towering limestone islands.",
+      "price": "$5500",
+      "rating": "4.7/5",
+      "location": "Vietnam"
+    },
+    {
+      "id": 27,
+      "name": "Galápagos Islands",
+      "image": "https://plus.unsplash.com/premium_photo-1664304455335-602b6811149a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=685",
+      "description": "An archipelago famed for unique wildlife and volcanic landscapes.",
+      "price": "$9200",
+      "rating": "4.9/5",
+      "location": "Ecuador"
+    },
+    {
+      "id": 28,
+      "name": "Vienna",
+      "image": "https://images.unsplash.com/photo-1516550893923-42d28e5677af?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1172",
+      "description": "Austria’s elegant capital known for imperial palaces, classical music, and coffeehouse culture.",
+      "price": "$6200",
+      "rating": "4.6/5",
+      "location": "Austria"
+    },
+    {
+      "id": 29,
+      "name": "Cappadocia",
+      "image": "https://images.unsplash.com/photo-1634193900132-d2294c3e25f9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735",
+      "description": "A surreal landscape of rock formations, cave dwellings, and hot air balloons.",
+      "price": "$5900",
+      "rating": "4.8/5",
+      "location": "Turkey"
+    },
+    {
+      "id": 30,
+      "name": "Cinque Terre",
+      "image": "https://plus.unsplash.com/premium_photo-1661962364570-b9dba53959de?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1168",
+      "description": "A string of colorful seaside villages on the rugged Italian Riviera coastline.",
+      "price": "$7100",
+      "rating": "4.7/5",
+      "location": "Italy"
     }
   ]
 }
