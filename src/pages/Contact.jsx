@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Send, Mail, User, MessageSquare } from "lucide-react";
-import toast from "react-hot-toast";
-import {Link} from 'react-router-dom'
+import toast, { Toaster } from "react-hot-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,30 +18,70 @@ const Contact = () => {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.message) {
-      toast.error("Please fill in all fields.");
+      toast.error("Please fill in all fields.", {
+        style: {
+          border: "1px solid #f87171",
+          background: "#fff",
+          color: "#b91c1c",
+        },
+        iconTheme: { primary: "#b91c1c", secondary: "#fff" },
+      });
       return;
     }
 
+    // ✅Loading toast
+    const loadingToast = toast.loading("Sending your message...");
+
     try {
-      const res = await fetch("http://localhost:3001/contacts", {
+      const res = await fetch("http://localhost:3000/contacts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
+      // Dismiss the loading toast before showing a result
+      toast.dismiss(loadingToast);
+
       if (res.ok) {
-        toast.success("Message sent successfully 🎉");
+        toast.success(" Message sent successfully!", {
+          style: {
+            border: "1px solid #4ade80",
+            background: "#f0fdf4",
+            color: "#166534",
+          },
+          iconTheme: { primary: "#16a34a", secondary: "#fff" },
+        });
         setFormData({ name: "", email: "", message: "" });
       } else {
-        toast.error("Failed to send message. Try again later.");
+        toast.error(" Failed to send message. Try again later.", {
+          style: {
+            border: "1px solid #f97316",
+            background: "#fff7ed",
+            color: "#9a3412",
+          },
+        });
       }
     } catch (error) {
-      toast.error("Network error. Please try again.");
+      toast.dismiss(loadingToast);
+      toast.error(" Network error. Please try again.", {
+        style: {
+          border: "1px solid #f87171",
+          background: "#fef2f2",
+          color: "#b91c1c",
+        },
+      });
     }
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center p-6">
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          duration: 3000,
+          style: { fontSize: "0.9rem" },
+        }}
+      />
       <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md border border-blue-100">
         <h1 className="text-3xl font-bold text-center mb-8 text-blue-800">
           Contact Us
@@ -53,7 +92,7 @@ const Contact = () => {
             <label className="block text-blue-700 font-semibold mb-2">
               Name
             </label>
-            <div className="flex items-center border-2 border-blue-200 rounded-xl px-3 py-2 transition-all duration-200 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-200">
+            <div className="flex items-center border-2 border-blue-200 rounded-xl px-3 py-2 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-200">
               <User className="text-blue-500 mr-2" size={20} />
               <input
                 type="text"
@@ -71,7 +110,7 @@ const Contact = () => {
             <label className="block text-blue-700 font-semibold mb-2">
               Email
             </label>
-            <div className="flex items-center border-2 border-blue-200 rounded-xl px-3 py-2 transition-all duration-200 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-200">
+            <div className="flex items-center border-2 border-blue-200 rounded-xl px-3 py-2 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-200">
               <Mail className="text-blue-500 mr-2" size={20} />
               <input
                 type="email"
@@ -89,7 +128,7 @@ const Contact = () => {
             <label className="block text-blue-700 font-semibold mb-2">
               Message
             </label>
-            <div className="flex items-start border-2 border-blue-200 rounded-xl px-3 py-2 transition-all duration-200 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-200">
+            <div className="flex items-start border-2 border-blue-200 rounded-xl px-3 py-2 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-200">
               <MessageSquare className="text-blue-500 mt-3 mr-2" size={20} />
               <textarea
                 name="message"
