@@ -6,7 +6,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import { Routes, Route } from "react-router-dom";
 import Contact from './pages/Contact';
 import HomePage from './pages/HomePage';
-
 function App() {
   const notify = () => toast("Added to planner");
   return (

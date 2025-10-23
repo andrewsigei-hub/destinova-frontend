@@ -1,4 +1,12 @@
 {
+  "contacts": [
+    {
+      "name": "Enock",
+      "email": "enock.cheruiyot1@student.moringaschool.com",
+      "message": "test",
+      "id": 1
+    }
+  ],
   "destinations": [
     {
       "id": 1,
