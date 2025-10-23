@@ -1,6 +1,6 @@
 import React from "react";
 
-function DestinationCard({ name, location, price, rating, image }) {
+function DestinationCard({ name, location, price, rating, image, description }) {
   return (
     <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden w-full max-w-sm">
       {/* Image */}
@@ -11,6 +11,9 @@ function DestinationCard({ name, location, price, rating, image }) {
         <p className="text-sm text-gray-500">{location}</p>
 
         {/* Price and Rating */}
+        <p className="mt-2 text-gray-600 text-sm">{description}</p>
+      
+      {/* Price and Rating */}
         <div className="flex justify-center items-center gap-3 mt-2 text-sm">
           <p className="font-medium text-gray-700">💲{price}</p>
           <p className="text-yellow-500">⭐ {rating}</p>
