@@ -83,7 +83,7 @@ const Contact = () => {
         }}
       />
       <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md border border-blue-100">
-        <h1 className="text-3xl font-bold text-center mb-8 text-blue-800">
+        <h1 className="text-3xl font-bold text-center mb-8 text-blue-800 animate-bounce">
           Contact Us
         </h1>
         <form onSubmit={handleSubmit} className="space-y-6">
