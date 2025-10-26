@@ -1,4 +1,4 @@
-# 🌍 Destinova
+#  Destinova
 
 **Group Members:** Andrew, Bradley, Hidaya, Stanley, Enock, Ajak  
 **Course:** Software Development Bootcamp — Phase 2 Project  
@@ -6,7 +6,7 @@
 
 ---
 
-## 🧭 Overview
+## Overview
 
 **Destinova** is a single-page travel planning application that allows users to explore destinations, add new ones, and manage their personal travel planner — all from one intuitive interface.  
 
@@ -14,7 +14,7 @@ Built using **React**, styled with **Tailwind CSS**, and powered by a **local JS
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 **Frontend:**
 - React (Create React App)
@@ -28,14 +28,14 @@ Built using **React**, styled with **Tailwind CSS**, and powered by a **local JS
 
 ---
 
-## 🧩 App Structure
+##  App Structure
 
 Destinova is organized into modular and reusable components for maintainability and clarity.
 
 
 ---
 
-## 🚦 Routing
+##  Routing
 
 Destinova uses **React Router DOM** to enable navigation between multiple pages while remaining a single-page application.
 
@@ -48,7 +48,7 @@ Destinova uses **React Router DOM** to enable navigation between multiple pages 
 
 ---
 
-## 💾 Backend (JSON Server)
+##  Backend (JSON Server)
 
 A **JSON Server** simulates a RESTful API for persistent data.
 
@@ -63,7 +63,7 @@ npx json-server --watch db.json --port 3001
 | DELETE | `/destinations/:id` | Remove a destination   |
 
 
-🧠 State Management
+ State Management
 
 State is managed using React’s useState hook, ensuring instant UI updates after POST or DELETE actions.
 
