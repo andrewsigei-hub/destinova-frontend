@@ -7,6 +7,7 @@ function Destinations() {
   const [destinations, setDestinations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
+  const [category , setCategory] = useState("All")
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
@@ -41,9 +42,13 @@ function Destinations() {
       .catch(() => toast.error("Network error while saving destination."));
   };
 
-  const filteredDestinations = destinations.filter((d) =>
-    d.name.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredDestinations = destinations.filter((dest) => {
+    const matchesSearch = dest.name
+      .toLowerCase()
+      .includes(search.toLowerCase());
+    const matchesCategory = category === "All" || dest.category === category;
+    return matchesSearch && matchesCategory;
+  });
 
   if (loading) {
     return <p className="text-center text-gray-600">Loading Destinations...</p>;
@@ -64,6 +69,20 @@ function Destinations() {
           onChange={(e) => setSearch(e.target.value)}
           className="w-80 sm:w-96 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
         />
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          className="p-2 border rounded-md"
+        >
+          <option value="All">All</option>
+          <option value="Beach">Beach</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Cultural">Cultural</option>
+          <option value="Nature">Nature</option>
+          <option value="Romantic">Romantic</option>
+          <option value="Urban">Urban</option>
+          <option value="Relaxation">Relaxation</option>
+        </select>
       </div>
 
       <div
