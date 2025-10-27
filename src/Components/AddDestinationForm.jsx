@@ -7,9 +7,8 @@ function AddDestinationForm({ onAdd }) {
     name: "",
     image: "",
     description: "",
-    price: "",
-    rating: "",
     location: "",
+    category: "Beach"
   });
 // Handles change whe a user inputs data in the form
   const handleChange = (e) => {
@@ -34,9 +33,8 @@ function AddDestinationForm({ onAdd }) {
       name: "",
       image: "",
       description: "",
-      price: "",
-      rating: "",
       location: "",
+      category: "Beach"
     });
   };
 
@@ -50,7 +48,7 @@ function AddDestinationForm({ onAdd }) {
       </h2>
 
       <div className="grid grid-cols-1 gap-4">
-        {["name", "image", "description", "price", "rating", "location"].map(
+        {["name", "image", "description", "location", "category"].map(
           (field) => (
             <input
               key={field}
@@ -64,6 +62,22 @@ function AddDestinationForm({ onAdd }) {
             />
           )
         )}
+        {/* Category Dropdown */}
+        <select
+          name="category"
+          value={formData.category}
+          onChange={handleChange}
+          className="p-2 border rounded-md w-full"
+          required
+        >
+          <option value="Beach">Beach</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Cultural">Cultural</option>
+          <option value="Nature">Nature</option>
+          <option value="Romantic">Romantic</option>
+          <option value="Urban">Urban</option>
+          <option value="Relaxation">Relaxation</option>
+        </select>
       </div>
 
       <button
