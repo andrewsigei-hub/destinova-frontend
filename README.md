@@ -1,14 +1,14 @@
-#  Destinova
+# Destinova
 
 **Group Members:** Andrew, Bradley, Hidaya, Stanley, Enock, Ajak  
 **Course:** Software Development Bootcamp — Phase 2 Project  
-**Type:** Single Page React Application  
+**Type:** Single Page React Application
 
 ---
 
 ## Overview
 
-**Destinova** is a single-page travel planning application that allows users to explore destinations, add new ones, and manage their personal travel planner — all from one intuitive interface.  
+**Destinova** is a single-page travel planning application that allows users to explore destinations, add new ones, and manage their personal travel planner — all from one intuitive interface.
 
 Built using **React**, styled with **Tailwind CSS**, and powered by a **local JSON Server** for data storage, Destinova demonstrates modern frontend development practices and dynamic state management.
 
@@ -17,6 +17,7 @@ Built using **React**, styled with **Tailwind CSS**, and powered by a **local JS
 ## Tech Stack
 
 **Frontend:**
+
 - React (Create React App)
 - React Router DOM
 - Tailwind CSS
@@ -24,35 +25,36 @@ Built using **React**, styled with **Tailwind CSS**, and powered by a **local JS
 - React-Hot-Toast (notifications)
 
 **Backend:**
+
 - JSON Server (local RESTful API)
 
 ---
 
-##  App Structure
+## App Structure
 
 Destinova is organized into modular and reusable components for maintainability and clarity.
 
-
 ---
 
-##  Routing
+## Routing
 
 Destinova uses **React Router DOM** to enable navigation between multiple pages while remaining a single-page application.
 
-| Route | Path | Description |
-|-------|------|-------------|
-| `/` | Home | Introduction and navigation overview |
-| `/destinations` | Destinations | Browse and add destinations |
-| `/planner` | Planner | View and delete saved destinations |
-| `/contact` | Contact | Contact form for user messages |
+| Route           | Path         | Description                          |
+| --------------- | ------------ | ------------------------------------ |
+| `/`             | Home         | Introduction and navigation overview |
+| `/destinations` | Destinations | Browse and add destinations          |
+| `/planner`      | Planner      | View and delete saved destinations   |
+| `/contact`      | Contact      | Contact form for user messages       |
 
 ---
 
-##  Backend (JSON Server)
+## Backend (JSON Server)
 
 A **JSON Server** simulates a RESTful API for persistent data.
 
 ### Run JSON Server
+
 ```bash
 npx json-server --watch db.json --port 3001
 
@@ -131,3 +133,4 @@ Visit the app at:
  Toast Notifications
 
  State Updates via setState
+```
