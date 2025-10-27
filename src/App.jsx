@@ -16,7 +16,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/destinations" element={<Destinations />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/planner" element={<TravelPlanner />} /> {/* Added route */}
+        <Route path="/planner" element={<TravelPlanner />} />{" "}
+        {/* Added route */}
       </Routes>
 
       {/* Toast notifications container */}
