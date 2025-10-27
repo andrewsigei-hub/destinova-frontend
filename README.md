@@ -56,7 +56,7 @@ A **JSON Server** simulates a RESTful API for persistent data.
 ### Run JSON Server
 
 ```bash
-npx json-server --watch db.json --port 3001
+json-server --watch db.json --port 3001
 
 | Method | Endpoint            | Description            |
 | ------ | ------------------- | ---------------------- |
