@@ -3,7 +3,7 @@ import DestinationCard from "../Components/DestinationCard";
 import Sidebar from "../Components/Sidebar";
 import AddDestinationForm from "../Components/AddDestinationForm";
 import { toast } from "react-toastify";
-import { SidebarOpen } from "lucide-react";
+
 
 function Destinations() {
   const [destinations, setDestinations] = useState([]);
@@ -68,7 +68,7 @@ function Destinations() {
       <div className="flex-1 ml-60 px-6 py-8">
         {/* Mobile menu button */}
         <button
-          onClick={() => setSidebarOpen(true)}
+          onClick={() => setSidebarOPen(true)}
           className="md:hidden fixed top-4 left-4 bg-blue-600 text-white p-2 rounded-md z-40"
         >
           ☰
