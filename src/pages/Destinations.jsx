@@ -9,31 +9,38 @@ function Destinations() {
   const [destinations, setDestinations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
-  const [category , setCategory] = useState("All")
+  const [category, setCategory] = useState("All");
   const [showForm, setShowForm] = useState(false);
   const [SidebarOpen, setSidebarOPen] =useState(false)
 
   useEffect(() => {
-    fetch("http://localhost:3000/destinations")
+    // ✅ Only change is the URL
+    fetch("https://destinova-uzj2.onrender.com/destinations")
       .then((res) => res.json())
       .then((data) => {
         setDestinations(data);
         setLoading(false);
       })
-      .catch((error) => console.error("Error fetching destinations:", error));
+      .catch((error) =>
+        console.error("Error fetching destinations:", error)
+      );
   }, []);
 
   const handleAddDestination = (newDest) => {
-    fetch("http://localhost:3000/destinations", {
+    fetch("https://destinova-uzj2.onrender.com/destinations", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newDest),
-    });
+    })
+      .then((res) => res.json())
+      .then((data) => setDestinations((prev) => [...prev, data]))
+      .catch((error) => console.error("Error adding destination:", error));
+
     setShowForm(false);
   };
 
   const handleSaveToPlanner = (destination) => {
-    fetch("http://localhost:3000/planner", {
+    fetch("https://destinova-uzj2.onrender.com/planner", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(destination),

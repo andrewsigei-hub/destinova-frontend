@@ -4,9 +4,9 @@ function TravelPlanner() {
   const [destinations, setDestinations] = useState([]);
   
 
-  // Fetch saved destinations from local JSON server
+  // Fetch saved destinations from backend
   useEffect(() => {
-    fetch("http://localhost:3000/planner")
+    fetch("https://destinova-uzj2.onrender.com/planner")
       .then((res) => res.json())
       .then((data) => setDestinations(data))
       .catch((err) => console.error("Error fetching planner:", err));
@@ -17,7 +17,7 @@ function TravelPlanner() {
 
   // Delete destination
   function handleDelete(id) {
-    fetch(`http://localhost:3000/planner/${id}`, { method: "DELETE" })
+    fetch(`https://destinova-uzj2.onrender.com/planner/${id}`, { method: "DELETE" })
       .then(() =>
         setDestinations(destinations.filter((dest) => dest.id !== id))
       );
@@ -27,7 +27,7 @@ function TravelPlanner() {
   function handleClear() {
     Promise.all(
       destinations.map((d) =>
-        fetch(`http://localhost:3000/planner/${d.id}`, { method: "DELETE" })
+        fetch(`https://destinova-uzj2.onrender.com/planner/${d.id}`, { method: "DELETE" })
       )
     ).then(() => setDestinations([]));
   }
@@ -47,7 +47,7 @@ function TravelPlanner() {
               onClick={() => handleDelete(dest.id)}
               className="text-red-500 hover:text-red-700"
             >
-              
+              {/* Optional: Add an icon here if needed */}
             </button>
           </li>
         ))}
