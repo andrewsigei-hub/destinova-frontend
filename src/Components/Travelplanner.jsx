@@ -6,7 +6,7 @@ function TravelPlanner() {
 
   // Fetch saved destinations from backend
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/planner`)
+    fetch("https://destinova-uzj2.onrender.com/planner")
       .then((res) => res.json())
       .then((data) => setDestinations(data))
       .catch((err) => console.error("Error fetching planner:", err));
@@ -20,7 +20,7 @@ function TravelPlanner() {
 
     const newItem = { name: newDestination };
 
-    fetch(`${import.meta.env.VITE_API_URL}/planner`, {
+    fetch("https://destinova-uzj2.onrender.com/planner", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newItem),
@@ -33,7 +33,7 @@ function TravelPlanner() {
 
   // Delete destination
   function handleDelete(id) {
-    fetch(`${import.meta.env.VITE_API_URL}/planner/${id}`, { method: "DELETE" })
+    fetch(`https://destinova-uzj2.onrender.com/planner/${id}`, { method: "DELETE" })
       .then(() =>
         setDestinations(destinations.filter((dest) => dest.id !== id))
       );
@@ -43,7 +43,7 @@ function TravelPlanner() {
   function handleClear() {
     Promise.all(
       destinations.map((d) =>
-        fetch(`${import.meta.env.VITE_API_URL}/planner/${d.id}`, { method: "DELETE" })
+        fetch(`https://destinova-uzj2.onrender.com/planner/${d.id}`, { method: "DELETE" })
       )
     ).then(() => setDestinations([]));
   }
@@ -76,7 +76,7 @@ function TravelPlanner() {
               onClick={() => handleDelete(dest.id)}
               className="text-red-500 hover:text-red-700"
             >
-              
+              {/* Optional: Add an icon here if needed */}
             </button>
           </li>
         ))}

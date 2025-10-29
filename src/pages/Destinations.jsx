@@ -11,7 +11,8 @@ function Destinations() {
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/destinations`)
+    // ✅ Only change is the URL
+    fetch("https://destinova-uzj2.onrender.com/destinations")
       .then((res) => res.json())
       .then((data) => {
         setDestinations(data);
@@ -23,7 +24,7 @@ function Destinations() {
   }, []);
 
   const handleAddDestination = (newDest) => {
-    fetch(`${import.meta.env.VITE_API_URL}/destinations`, {
+    fetch("https://destinova-uzj2.onrender.com/destinations", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newDest),
@@ -36,7 +37,7 @@ function Destinations() {
   };
 
   const handleSaveToPlanner = (destination) => {
-    fetch(`${import.meta.env.VITE_API_URL}/planner`, {
+    fetch("https://destinova-uzj2.onrender.com/planner", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(destination),

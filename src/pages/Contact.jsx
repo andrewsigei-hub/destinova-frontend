@@ -29,21 +29,20 @@ const Contact = () => {
       return;
     }
 
-    // ✅Loading toast
     const loadingToast = toast.loading("Sending your message...");
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/contacts`, {
+      // ✅ Only change is the URL
+      const res = await fetch("https://destinova-uzj2.onrender.com/contacts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
-      // Dismiss the loading toast before showing a result
       toast.dismiss(loadingToast);
 
       if (res.ok) {
-        toast.success(" Message sent successfully!", {
+        toast.success("Message sent successfully!", {
           style: {
             border: "1px solid #4ade80",
             background: "#f0fdf4",
@@ -51,9 +50,9 @@ const Contact = () => {
           },
           iconTheme: { primary: "#16a34a", secondary: "#fff" },
         });
-        setFormData({ name: "", email: "", message: "" }); // clears form data
+        setFormData({ name: "", email: "", message: "" });
       } else {
-        toast.error(" Failed to send message. Try again later.", {
+        toast.error("Failed to send message. Try again later.", {
           style: {
             border: "1px solid #f97316",
             background: "#fff7ed",
@@ -63,7 +62,7 @@ const Contact = () => {
       }
     } catch (error) {
       toast.dismiss(loadingToast);
-      toast.error(" Network error. Please try again.", {
+      toast.error("Network error. Please try again.", {
         style: {
           border: "1px solid #f87171",
           background: "#fef2f2",
