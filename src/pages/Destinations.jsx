@@ -7,25 +7,31 @@ function Destinations() {
   const [destinations, setDestinations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
-  const [category , setCategory] = useState("All")
+  const [category, setCategory] = useState("All");
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:3000/destinations")
+    fetch("https://destinova-backend.onrender.com/destinations")
       .then((res) => res.json())
       .then((data) => {
         setDestinations(data);
         setLoading(false);
       })
-      .catch((error) => console.error("Error fetching destinations:", error));
+      .catch((error) =>
+        console.error("Error fetching destinations:", error)
+      );
   }, []);
 
   const handleAddDestination = (newDest) => {
-    fetch("http://localhost:3000/destinations", {
+    fetch("https://destinova-backend.onrender.com/destinations", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newDest),
-    });
+    })
+      .then((res) => res.json())
+      .then((data) => setDestinations((prev) => [...prev, data]))
+      .catch((error) => console.error("Error adding destination:", error));
+
     setShowForm(false);
   };
 
@@ -61,7 +67,8 @@ function Destinations() {
         Explore beautiful destinations
       </h3>
 
-      <div className="flex justify-center mb-8">
+      {/* Search + Filter */}
+      <div className="flex justify-center mb-8 gap-2">
         <input
           type="text"
           placeholder="Search destinations by name..."
@@ -85,6 +92,7 @@ function Destinations() {
         </select>
       </div>
 
+      {/* Destination Grid */}
       <div
         className="grid gap-6 justify-items-center"
         style={{
@@ -110,6 +118,7 @@ function Destinations() {
         )}
       </div>
 
+      {/* Add Destination Button */}
       <div className="text-center mt-8">
         <button
           onClick={() => setShowForm(!showForm)}
@@ -119,6 +128,7 @@ function Destinations() {
         </button>
       </div>
 
+      {/* Add Form */}
       {showForm && <AddDestinationForm onAdd={handleAddDestination} />}
     </div>
   );
