@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 function TravelPlanner() {
   const [destinations, setDestinations] = useState([]);
-  const [newDestination, setNewDestination] = useState("");
+  
 
   // Fetch saved destinations from local JSON server
   useEffect(() => {
@@ -12,24 +12,8 @@ function TravelPlanner() {
       .catch((err) => console.error("Error fetching planner:", err));
   }, []);
 
-  // Add new destination
-  function handleAdd(e) {
-    e.preventDefault();
 
-    if (newDestination.trim() === "") return;
-
-    const newItem = { name: newDestination };
-
-    fetch("http://localhost:3000/planner", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newItem),
-    })
-      .then((res) => res.json())
-      .then((data) => setDestinations([...destinations, data]));
-
-    setNewDestination("");
-  }
+  
 
   // Delete destination
   function handleDelete(id) {
@@ -51,19 +35,6 @@ function TravelPlanner() {
   return (
     <div className="p-8 max-w-2xl mx-auto text-center">
       <h1 className="text-3xl font-bold mb-4 text-blue-600">Travel Planner</h1>
-
-      <form onSubmit={handleAdd} className="flex gap-2 justify-center mb-6">
-        <input
-          type="text"
-          placeholder="Add a destination..."
-          value={newDestination}
-          onChange={(e) => setNewDestination(e.target.value)}
-          className="border rounded-lg p-2 w-2/3"
-        />
-        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
-          Add
-        </button>
-      </form>
 
       <ul className="space-y-3">
         {destinations.map((dest) => (
