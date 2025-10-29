@@ -4,26 +4,7 @@
       "name": "Enock",
       "email": "enock.cheruiyot1@student.moringaschool.com",
       "message": "test",
-      "id": 1
-    }
-  ],
-  "planner": [
-    {},
-    {
-      "id": 3,
-      "name": "New York City",
-      "image": "https://images.unsplash.com/photo-1548143580-db1bff6af184?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
-      "description": "THe city that never sleeps - skyscrapers, Broadway and endless energy.",
-      "location": "USA",
-      "category": "Urban"
-    },
-    {
-      "id": 4,
-      "name": "Tokyo",
-      "image": "https://images.unsplash.com/photo-1549693578-d683be217e58?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1477",
-      "description": "Largest city of Japan, a global hub for culture and technology.",
-      "location": "Japan",
-      "category": "Urban"
+      "id": "1"
     }
   ],
   "planner": [],
@@ -274,7 +255,7 @@
       "description": "Lovely city",
       "location": "Malaysia",
       "category": "Urban",
-      "id": 1761201478430
+      "id": "1761201478430"
     }
   ]
 }

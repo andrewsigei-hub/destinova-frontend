@@ -15,7 +15,7 @@ function TravelPlanner() {
   const handleDelete = (id, name) => {
     fetch(`http://localhost:3000/planner/${id}`, { method: "DELETE" })
       .then(() => {
-        setDestinations(destinations.filter((dest) => dest.id !== id));
+        setDestinations(destinations.filter((dest) => dest.id !== id)); // confirms deletion
         toast.success(`${name} removed from planner ❌`);
       })
       .catch(() => toast.error("Failed to remove destination"));

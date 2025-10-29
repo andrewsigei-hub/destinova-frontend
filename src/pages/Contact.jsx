@@ -51,7 +51,7 @@ const Contact = () => {
           },
           iconTheme: { primary: "#16a34a", secondary: "#fff" },
         });
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", message: "" }); // clears form data
       } else {
         toast.error(" Failed to send message. Try again later.", {
           style: {
