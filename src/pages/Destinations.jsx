@@ -36,7 +36,7 @@ function Destinations() {
   };
 
   const handleSaveToPlanner = (destination) => {
-    fetch("http://localhost:3000/planner", {
+    fetch("https://destinova-backend.onrender.com/planner", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(destination),

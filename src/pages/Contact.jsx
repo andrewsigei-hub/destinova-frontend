@@ -29,7 +29,7 @@ const Contact = () => {
       return;
     }
 
-    // ✅Loading toast
+    // Loading toast
     const loadingToast = toast.loading("Sending your message...");
 
     try {
