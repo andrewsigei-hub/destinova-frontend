@@ -17,9 +17,7 @@ function Destinations() {
         setDestinations(data);
         setLoading(false);
       })
-      .catch((error) =>
-        console.error("Error fetching destinations:", error)
-      );
+      .catch((error) => console.error("Error fetching destinations:", error));
   }, []);
 
   const handleAddDestination = (newDest) => {
