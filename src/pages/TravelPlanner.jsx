@@ -6,14 +6,14 @@ function TravelPlanner() {
   const [destinations, setDestinations] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/planner")
+    fetch(`${import.meta.env.VITE_API_URL}/planner`)
       .then((res) => res.json())
       .then((data) => setDestinations(data))
       .catch((err) => console.error("Error fetching planner:", err));
   }, []);
 
   const handleDelete = (id, name) => {
-    fetch(`http://localhost:3000/planner/${id}`, { method: "DELETE" })
+    fetch(`${import.meta.env.VITE_API_URL}/planner/${id}`, { method: "DELETE" })
       .then(() => {
         setDestinations(destinations.filter((dest) => dest.id !== id)); // confirms deletion
         toast.success(`${name} removed from planner ❌`);

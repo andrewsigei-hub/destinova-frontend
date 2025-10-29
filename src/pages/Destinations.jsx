@@ -11,7 +11,7 @@ function Destinations() {
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
-    fetch("https://destinova-backend.onrender.com/destinations")
+    fetch(`${import.meta.env.VITE_API_URL}/destinations`)
       .then((res) => res.json())
       .then((data) => {
         setDestinations(data);
@@ -23,7 +23,7 @@ function Destinations() {
   }, []);
 
   const handleAddDestination = (newDest) => {
-    fetch("https://destinova-backend.onrender.com/destinations", {
+    fetch(`${import.meta.env.VITE_API_URL}/destinations`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newDest),
@@ -36,7 +36,7 @@ function Destinations() {
   };
 
   const handleSaveToPlanner = (destination) => {
-    fetch("http://localhost:3000/planner", {
+    fetch(`${import.meta.env.VITE_API_URL}/planner`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(destination),

@@ -4,9 +4,9 @@ function TravelPlanner() {
   const [destinations, setDestinations] = useState([]);
   const [newDestination, setNewDestination] = useState("");
 
-  // Fetch saved destinations from local JSON server
+  // Fetch saved destinations from backend
   useEffect(() => {
-    fetch("http://localhost:3000/planner")
+    fetch(`${import.meta.env.VITE_API_URL}/planner`)
       .then((res) => res.json())
       .then((data) => setDestinations(data))
       .catch((err) => console.error("Error fetching planner:", err));
@@ -20,7 +20,7 @@ function TravelPlanner() {
 
     const newItem = { name: newDestination };
 
-    fetch("http://localhost:3000/planner", {
+    fetch(`${import.meta.env.VITE_API_URL}/planner`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newItem),
@@ -33,7 +33,7 @@ function TravelPlanner() {
 
   // Delete destination
   function handleDelete(id) {
-    fetch(`http://localhost:3000/planner/${id}`, { method: "DELETE" })
+    fetch(`${import.meta.env.VITE_API_URL}/planner/${id}`, { method: "DELETE" })
       .then(() =>
         setDestinations(destinations.filter((dest) => dest.id !== id))
       );
@@ -43,7 +43,7 @@ function TravelPlanner() {
   function handleClear() {
     Promise.all(
       destinations.map((d) =>
-        fetch(`http://localhost:3000/planner/${d.id}`, { method: "DELETE" })
+        fetch(`${import.meta.env.VITE_API_URL}/planner/${d.id}`, { method: "DELETE" })
       )
     ).then(() => setDestinations([]));
   }
