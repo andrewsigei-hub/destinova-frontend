@@ -26,7 +26,7 @@ function Login({ onLogin }) {
           setUser(found);
           localStorage.setItem("user", JSON.stringify(found));
           
-          navigate("/profile"); 
+          
         } else {
           alert("Invalid username or password");
         }
@@ -57,6 +57,10 @@ function Login({ onLogin }) {
         navigate("/profile"); // ✅ navigate after signup
       });
   };
+
+  if (user) {
+    return <Profile user={user} />;
+  }
 
   return (
     <div className="max-w-sm mx-auto mt-12 p-6 border rounded shadow">
