@@ -25,8 +25,6 @@ function Login({ onLogin }) {
         if (found) {
           setUser(found);
           localStorage.setItem("user", JSON.stringify(found));
-          
-          
         } else {
           alert("Invalid username or password");
         }
