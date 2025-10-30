@@ -41,7 +41,7 @@ function Login({ onLogin }) {
       username,
       email,
       password,
-      image: `https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg?semt=ais_hybrid&w=740&q=80${username}`
+      image: `https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg?semt=ais_hybrid&w=740&q=80`
     };
 
     fetch("http://localhost:3000/users", {
