@@ -1,12 +1,26 @@
 {
-  "users":[
+  "users": [
     {
-       "id":1,
-       "username": "hidaya",
-       "email": "hidaya@gmail.com",
-       "password": "12354",
-       "image":"https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg?semt=ais_hybrid&w=740&q=80"  
-  }
+      "id": 1,
+      "username": "hidaya",
+      "email": "hidaya@gmail.com",
+      "password": "12354",
+      "image": "https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg?semt=ais_hybrid&w=740&q=80"
+    },
+    {
+      "username": "Mark",
+      "email": "mark@example.com",
+      "password": "12345",
+      "image": "https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg?semt=ais_hybrid&w=740&q=80Mark",
+      "id": 2
+    },
+    {
+      "username": "Emmanuel",
+      "email": "emmanuel@gmail.com",
+      "password": "12367",
+      "image": "https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg?semt=ais_hybrid&w=740&q=80",
+      "id": 3
+    }
   ],
   "contacts": [
     {
