@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // ✅ import this
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Profile from "../pages/Profile";
 
 function Login({ onLogin }) {
@@ -8,7 +10,7 @@ function Login({ onLogin }) {
   const [password, setPassword] = useState("");
   const [user, setUser] = useState(null);
   const [isLoggingIn, setIsLoggingIn] = useState(true);
-  const navigate = useNavigate(); // ✅ for navigation
+  const navigate = useNavigate();
 
   useEffect(() => {
     const savedUser = JSON.parse(localStorage.getItem("user"));
@@ -25,12 +27,27 @@ function Login({ onLogin }) {
         if (found) {
           setUser(found);
           localStorage.setItem("user", JSON.stringify(found));
-          
-          navigate("/profile"); 
+          onLogin(found);
+
+          toast.success(`Welcome back, ${found.username}! 👋`, {
+            position: "top-right",
+            autoClose: 2000,
+          });
+
+          setTimeout(() => navigate("/profile"), 1500);
         } else {
-          alert("Invalid username or password");
+          toast.error("Invalid username or password 😞", {
+            position: "top-right",
+            autoClose: 2500,
+          });
         }
-      });
+      })
+      .catch(() =>
+        toast.error("Server error! Please try again later.", {
+          position: "top-right",
+          autoClose: 3000,
+        })
+      );
   };
 
   const handleSignup = (e) => {
@@ -54,15 +71,30 @@ function Login({ onLogin }) {
         setUser(data);
         localStorage.setItem("user", JSON.stringify(data));
         onLogin(data);
-        navigate("/profile"); // ✅ navigate after signup
-      });
+
+        toast.success("Account created successfully! 🎉", {
+          position: "top-right",
+          autoClose: 2000,
+        });
+
+        setTimeout(() => navigate("/profile"), 1500);
+      })
+      .catch(() =>
+        toast.error("Signup failed. Please try again.", {
+          position: "top-right",
+          autoClose: 3000,
+        })
+      );
   };
 
   return (
-    <div className="max-w-sm mx-auto mt-12 p-6 border rounded shadow">
+    <div className="max-w-sm mx-auto mt-12 p-6 border rounded shadow relative">
+      <ToastContainer /> {/* ✅ Toast container here */}
+
       <h2 className="text-2xl font-bold mb-4 text-center text-blue-700">
         {isLoggingIn ? "Login" : "Sign Up"}
       </h2>
+
       <form onSubmit={isLoggingIn ? handleLogin : handleSignup}>
         <input
           type="text"
@@ -90,6 +122,7 @@ function Login({ onLogin }) {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
+
         <button
           type="submit"
           className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
@@ -97,6 +130,7 @@ function Login({ onLogin }) {
           {isLoggingIn ? "Login" : "Sign Up"}
         </button>
       </form>
+
       <p className="text-center mt-4 text-sm">
         {isLoggingIn ? (
           <>
