@@ -35,17 +35,18 @@ function App() {
         {/* Planner route */}
         <Route path="/planner" element={<TravelPlanner />} />{" "}
         {/* Profile route */}
-        <Route path="/profile"
-           element={
+        <Route
+          path="/profile"
+          element={
             user ? (
               <Profile user={user} onLogout={handleLogout} />
-             ) : (
-                //  if a user is not loggen in the login form is displayed instead of the profile.
-              <Login/>
+            ) : (
+              //  if a user is not loggen in the login form is displayed instead of the profile.
+              <Login />
             )
           }
         />
-       
+        <Route path="/login" element={<Login />} />
       </Routes>
       {/* Toast notifications container */}
       <ToastContainer position="top-center" autoClose={2000} />
