@@ -7,6 +7,7 @@ import TravelPlanner from "./pages/TravelPlanner"; // Import the new Planner pag
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Important: import toast styles
 import { Routes, Route } from "react-router-dom";
+import Help from "./pages/Help";
 
 function App() {
   return (
