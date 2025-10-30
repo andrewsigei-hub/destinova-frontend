@@ -27,14 +27,8 @@ function Login({ onLogin }) {
         if (found) {
           setUser(found);
           localStorage.setItem("user", JSON.stringify(found));
-          onLogin(found);
-
-          toast.success(`Welcome back, ${found.username}! 👋`, {
-            position: "top-right",
-            autoClose: 2000,
-          });
-
-          setTimeout(() => navigate("/profile"), 1500);
+          
+          
         } else {
           toast.error("Invalid username or password 😞", {
             position: "top-right",
@@ -86,6 +80,10 @@ function Login({ onLogin }) {
         })
       );
   };
+
+  if (user) {
+    return <Profile user={user} />;
+  }
 
   return (
     <div className="max-w-sm mx-auto mt-12 p-6 border rounded shadow relative">
