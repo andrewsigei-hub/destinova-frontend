@@ -24,11 +24,11 @@ function AddDestinationForm({ onAdd }) {
 // Sets new destination to formData
     const newDestination = {
       ...formData,
-      id: Date.now(), // generate a unique id
+      id: Date.now(), 
     };
 
     onAdd(newDestination);
-
+// Form Data is reset
     setFormData({
       name: "",
       image: "",
