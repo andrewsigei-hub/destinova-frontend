@@ -46,7 +46,7 @@ function App() {
             )
           }
         />
-        {/* <Route path="/login" element={<Login />} /> */}
+        <Route path="/login" element={<Login onLogin={setUser} />} />
       </Routes>
       {/* Toast notifications container */}
       <ToastContainer position="top-center" autoClose={2000} />
