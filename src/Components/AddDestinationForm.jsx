@@ -8,14 +8,14 @@ function AddDestinationForm({ onAdd }) {
     image: "",
     description: "",
     location: "",
-    category: "Beach"
+    category: "",
   });
 // Handles change whe a user inputs data in the form
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: value, // use value stored in name as property key
     }));
   };
 // Handles submit and prevents default behavior
@@ -48,7 +48,7 @@ function AddDestinationForm({ onAdd }) {
       </h2>
 
       <div className="grid grid-cols-1 gap-4">
-        {["name", "image", "description", "location", "category"].map(
+        {["name", "image", "description", "location"].map(
           (field) => (
             <input
               key={field}
@@ -66,6 +66,7 @@ function AddDestinationForm({ onAdd }) {
         <select
           name="category"
           value={formData.category}
+          
           onChange={handleChange}
           className="p-2 border rounded-md w-full"
           required

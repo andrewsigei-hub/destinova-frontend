@@ -10,7 +10,7 @@
 
 **Destinova** is a single-page travel planning application that allows users to explore destinations, add new ones, and manage their personal travel planner — all from one intuitive interface.
 
-Built using **React**, styled with **Tailwind CSS**, and powered by a **local JSON Server** for data storage, Destinova demonstrates modern frontend development practices and dynamic state management.
+Built using **React**, styled with **Tailwind CSS**, and powered by a **RESTful API backend** (deployed on Render), Destinova demonstrates modern frontend development practices and dynamic state management.
 
 ---
 
@@ -18,7 +18,7 @@ Built using **React**, styled with **Tailwind CSS**, and powered by a **local JS
 
 **Frontend:**
 
-- React (Create React App)
+- React (Vite / Create React App)
 - React Router DOM
 - Tailwind CSS
 - Lucide-React (icons)
@@ -26,7 +26,8 @@ Built using **React**, styled with **Tailwind CSS**, and powered by a **local JS
 
 **Backend:**
 
-- JSON Server (local RESTful API)
+- Deployed JSON Server on Render
+- RESTful API for destinations and planner management
 
 ---
 
@@ -49,48 +50,54 @@ Destinova uses **React Router DOM** to enable navigation between multiple pages 
 
 ---
 
-## Backend (JSON Server)
+## Backend (Render JSON Server)
 
-A **JSON Server** simulates a RESTful API for persistent data.
+A **JSON Server** simulates a RESTful API for persistent data and is hosted at:
+https://destinova-uzj2.onrender.com
 
-### Run JSON Server
 
-```bash
-json-server --watch db.json --port 3001
+### Endpoints
 
 | Method | Endpoint            | Description            |
-| ------ | ------------------- | ---------------------- |
+| ------ | ------------------ | ---------------------- |
 | GET    | `/destinations`     | Fetch all destinations |
 | POST   | `/destinations`     | Add a new destination  |
 | DELETE | `/destinations/:id` | Remove a destination   |
+| GET    | `/planner`          | Fetch saved destinations |
+| POST   | `/planner`          | Add to planner         |
+| DELETE | `/planner/:id`      | Remove from planner    |
 
+All frontend fetch requests point to this deployed backend.
 
- State Management
+---
 
-State is managed using React’s useState hook, ensuring instant UI updates after POST or DELETE actions.
+## State Management
 
+State is managed using React’s `useState` hook, ensuring instant UI updates after POST or DELETE actions.
+
+```javascript
 function addDestination(newDestination) {
   setDestinations([...destinations, newDestination]);
 }
 
-Example POST Request
-fetch('http://localhost:3001/destinations', {
+fetch('https://destinova-uzj2.onrender.com/destinations', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ name: "Rome", country: "Italy" })
+  body: JSON.stringify({ name: "Rome", category: "Cultural" })
 })
   .then(res => res.json())
   .then(newDestination => addDestination(newDestination));
 
-🎨 Styling
 
-Styled using Tailwind CSS for responsiveness and consistency.
+Styling & UX
 
-Lucide-React provides vector icons.
+Tailwind CSS for responsive and modern styling.
 
-React-Hot-Toast delivers user notifications (e.g., "Destination Added" or "Deleted Successfully").
+Lucide-React provides clean vector icons.
 
-🚀 Installation & Setup
+React-Hot-Toast delivers instant user notifications (e.g., "Destination Added" or "Deleted Successfully").
+
+Installation & Setup (Development)
 
 Clone the repository:
 
@@ -103,34 +110,50 @@ Install dependencies:
 npm install
 
 
-Start the JSON server:
+Start the React app locally (points to Render backend):
 
-npx json-server --watch db.json --port 3000
-
-
-Start the React app:
-
-npm start
+npm run dev   # if using Vite
+# or
+npm start     # if using CRA
 
 
 Visit the app at:
-👉 http://localhost:3000
+👉 http://localhost:5173
+ (Vite) or http://localhost:3000
+ (CRA)
 
- #Features Summary
+Note: The frontend is already configured to use the Render backend, so no local JSON server setup is required.
 
- Single-Page React Application
+Features Summary
 
- 5+ Reusable Components
+Single-Page React Application
 
- 3+ Client-side Routes
+Modular, Reusable Components
 
- Controlled Form with POST Request
+Client-side Routing with React Router DOM
 
- GET & DELETE Requests (JSON Server)
+Controlled Forms with POST Requests
 
- Tailwind Styling
+GET & DELETE Requests to deployed backend
 
- Toast Notifications
+Tailwind CSS Styling
 
- State Updates via setState
-```
+Toast Notifications via React-Hot-Toast
+
+Dynamic State Updates via useState
+
+Deployment
+
+The frontend can be deployed easily on Vercel:
+
+Connect your GitHub repository.
+
+Select the root project folder.
+
+Build command: npm run build (CRA) or npm run build (Vite)
+
+Output directory: build (CRA) or dist (Vite)
+
+Vercel will handle hosting; frontend will interact with the Render backend automatically.
+
+Deployed backend URL: https://destinova-uzj2.onrender.com

@@ -6,16 +6,18 @@ function TravelPlanner() {
   const [destinations, setDestinations] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/planner")
+    // ✅ Updated URL
+    fetch("https://destinova-uzj2.onrender.com/planner")
       .then((res) => res.json())
       .then((data) => setDestinations(data))
       .catch((err) => console.error("Error fetching planner:", err));
   }, []);
 
   const handleDelete = (id, name) => {
-    fetch(`http://localhost:3000/planner/${id}`, { method: "DELETE" })
+    // ✅ Updated URL
+    fetch(`https://destinova-uzj2.onrender.com/planner/${id}`, { method: "DELETE" })
       .then(() => {
-        setDestinations(destinations.filter((dest) => dest.id !== id));
+        setDestinations(destinations.filter((dest) => dest.id !== id)); // confirms deletion
         toast.success(`${name} removed from planner ❌`);
       })
       .catch(() => toast.error("Failed to remove destination"));
