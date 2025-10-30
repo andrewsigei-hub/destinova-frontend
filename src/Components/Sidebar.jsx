@@ -1,6 +1,8 @@
 import React from "react";
-
+// Side bar is rendered to display categories and filter according to the chosen category
+// THe destructured props are provided to the sidebar by the parent component (Destinations)
 function Sidebar({ selectedCategory, onSelectCategory }) {
+
   const categories = [
     "All",
     "Beach",
