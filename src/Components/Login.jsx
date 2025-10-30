@@ -27,8 +27,6 @@ function Login({ onLogin }) {
         if (found) {
           setUser(found);
           localStorage.setItem("user", JSON.stringify(found));
-          
-          
         } else {
           toast.error("Invalid username or password 😞", {
             position: "top-right",
