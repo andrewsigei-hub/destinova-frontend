@@ -4,10 +4,44 @@
       "name": "Enock",
       "email": "enock.cheruiyot1@student.moringaschool.com",
       "message": "test",
-      "id": "1"
+      "id": 1
     }
   ],
-  "planner": [],
+  "planner": [
+    {},
+    {
+      "id": 3,
+      "name": "New York City",
+      "image": "https://images.unsplash.com/photo-1548143580-db1bff6af184?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
+      "description": "THe city that never sleeps - skyscrapers, Broadway and endless energy.",
+      "location": "USA",
+      "category": "Urban"
+    },
+    {
+      "id": 4,
+      "name": "Tokyo",
+      "image": "https://images.unsplash.com/photo-1549693578-d683be217e58?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1477",
+      "description": "Largest city of Japan, a global hub for culture and technology.",
+      "location": "Japan",
+      "category": "Urban"
+    },
+    {
+      "id": "9",
+      "name": "Santorini",
+      "image": "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735",
+      "description": "A beautiful Greek island with whitewashed buildings and blue-domed roofs.",
+      "location": "Greece",
+      "category": "Romantic"
+    },
+    {
+      "id": "12",
+      "name": "Cape Town",
+      "image": "https://images.unsplash.com/photo-1496497243327-9dccd845c35f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+      "description": "A port city on South Africa’s southwest coast, known for its harbor, Table Mountain, and beaches.",
+      "location": "South Africa",
+      "category": "Adventure"
+    }
+  ],
   "destinations": [
     {
       "id": "1",
